@@ -1,5 +1,6 @@
 package api.project.structor.entity.bt;
 
+import api.project.structor.dto.ICourseDto;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,7 +15,7 @@ import java.util.List;
 @AllArgsConstructor
 @Getter
 @Setter
-public class Course {
+public class Course implements ICourseDto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,6 +33,7 @@ public class Course {
 
     @OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
     private List<StudentEnrollment> enrollments;
+
 
     // Getters & Setters
 }

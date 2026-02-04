@@ -1,11 +1,12 @@
 package api.project.structor.services;
 
+import api.project.structor.dto.PageDto;
 import api.project.structor.entity.Student;
 
 import java.util.List;
 
 public interface IStudentService {
-    List<Student> findAll();
+    List<Student> findAll(PageDto pageDto);
     Student findById(String id);
     Student add(Student student);
     Student update(Student student, String id);

@@ -6,7 +6,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository // tao bean // ORM
 public interface StudentRepository extends JpaRepository<Student,Long> {
@@ -25,6 +28,10 @@ public interface StudentRepository extends JpaRepository<Student,Long> {
     void deleteByName(@Param("name") String name);
 
     // Lưu ý : nếu truy vấn là DML : INSERT, UPDATE, DELETE thì phải thêm 2 chú thích : @Transactional, @Modify
+    List<Student> findAllByNameContainingIgnoreCase(String name);
+
+    // DTO Projection và Interface Projection
+
 }
 
 

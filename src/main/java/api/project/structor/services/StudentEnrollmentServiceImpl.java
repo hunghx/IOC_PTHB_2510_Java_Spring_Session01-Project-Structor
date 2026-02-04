@@ -10,6 +10,9 @@ import api.project.structor.repositories.ICourseRepository;
 import api.project.structor.repositories.IEnrollmentRepository;
 import api.project.structor.repositories.StudentRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -30,6 +33,11 @@ public class StudentEnrollmentServiceImpl implements IStudentEnrollmentSevice{
         StudentEnrollment studentEnrollment = new StudentEnrollment(null,
                 c, s, null);
         StudentEnrollment se = enrollmentRepository.save(studentEnrollment);
+        Pageable pageable = PageRequest.of(2,1);
+        Sort sort = Sort.by(Sort.Direction.ASC, "enrollmentDate");
         return new CourseEnrollmentResponse(request.getStudentId(),courseId,se.getEnrollAt());
+
+
+
     }
 }
