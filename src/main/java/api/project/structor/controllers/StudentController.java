@@ -13,24 +13,24 @@ public class StudentController {
     // @ModelAttribute : lấy dữ liệu từ form , @RequestBody : lấy dữ liệu từ json (POST và PUT)
     // @RequestParam : lấy dữ liệu từ queryString(URL)
     // @PathVariable : lấy dữ liệu từ đường dẫn(URL)
-    @Autowired
-    private IStudentService studentService;
-    // lấy danh sách
-    @RequestMapping("/students")
-    public List<Student> getAllStudents(){
-        return studentService.findAll();
-    }
-
-    // lấy theo id
-    @RequestMapping("/student-details")
-    public Student getStudentById(@RequestParam String id){
-        return studentService.findById(id);
-    }
-
-    // THêm mới : post
-    @RequestMapping(value = "/students", method = RequestMethod.POST)
-    public Student addStudent(@RequestBody Student student){
-        return  studentService.add(student);
-    }
+//    @Autowired
+////    private IStudentService studentService;
+//    // lấy danh sách
+//    @RequestMapping("/students")
+//    public List<Student> getAllStudents(){
+//        return studentService.findAll();
+//    }
+//
+//    // lấy theo id
+//    @RequestMapping("/student-details")
+//    public Student getStudentById(@RequestParam String id){
+//        return studentService.findById(id);
+//    }
+//
+//    // THêm mới : post
+//    @RequestMapping(value = "/students", method = RequestMethod.POST)
+//    public Student addStudent(@RequestBody Student student){
+//        return  studentService.add(student);
+//    }
 
 }

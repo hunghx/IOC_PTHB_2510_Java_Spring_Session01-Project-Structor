@@ -9,9 +9,9 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Getter
 @Setter
-@Entity
+//@Entity
 public class Student { //  đại diện cho dữ liệu
-    @Id
+//    @Id
     private String studentId;
     private String studentName;
     private LocalDate birthDate;
